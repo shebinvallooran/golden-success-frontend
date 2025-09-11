@@ -1,0 +1,285 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "industries": "Industries",
+    "contact": "Contact Us",
+    "requestQuote": "Request a Quote"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "viewMore": "View More",
+    "viewLess": "View Less",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "callNow": "Call Now",
+    "emailUs": "Email Us",
+    "language": "Language",
+    "english": "English",
+    "arabic": "العربية",
+    "trustedSupplier": "Trusted Biomedical Supply.",
+    "sfdaCompliant": "SFDA Compliant",
+    "isoCertifiedPartners": "ISO Certified Partners",
+    "certifiedReliable": "Certified & Reliable"
+  },
+  "home": {
+    "title": "Innovative Biomedical\nSupply for",
+    "titleHighlight": "Smarter Labs",
+    "subtitle": "Your trusted partner for quality products and services",
+    "heroDescription": "Delivering high-quality media, reagents, diagnostics,\nand lab consumables backed by global standards.",
+    "featuredProducts": "Featured Products",
+    "whyChooseUs": "Why Choose Us",
+    "ourServices": "Our Services",
+    "testimonials": "What Our Clients Say",
+    "whatWeDo": {
+      "title": "What We Do",
+      "heading": "Connecting Biomedical Innovation to Frontline Science",
+      "description": "We supply certified biomedical and diagnostic products to a range of professional institutions across the Gulf region — ensuring each facility receives the tools they need to work with precision, safety, and efficiency.",
+      "buttonText": "Explore Our Product Range",
+      "services": {
+        "clinicalLabs": {
+          "title": "Clinical Laboratories",
+          "description": "We provide essential microbiological media, diagnostic kits, and lab disposables tailored for clinical laboratory workflows — supporting reliable disease detection and patient care."
+        },
+        "medicalStores": {
+          "title": "Medical Stores",
+          "description": "Najah Dahabi partners with licensed medical stores to ensure access to high-demand lab essentials and diagnostic tools. Our stock is SFDA-compliant, clearly labeled, and ready for retail or bulk distribution."
+        },
+        "diagnosticCenters": {
+          "title": "Diagnostic Centers",
+          "description": "We serve diagnostic labs with rapid test kits, blood collection systems, reagents, and staining solutions — enabling fast, accurate, and safe diagnosis for a variety of conditions."
+        },
+        "researchInstitutions": {
+          "title": "Research Institutions",
+          "description": "From universities to private R&D facilities, we support research excellence by supplying analytical-grade chemicals, reagents, and custom-prepared media — all sourced from globally certified suppliers."
+        }
+      }
+    },
+    "whyUs": {
+      "title": "Why Clients Choose Us",
+      "heading": "Built on trust, precision, and a deep understanding of biomedical supply needs.",
+      "description": "Our clients choose Najah Dhahabi because we go beyond products — we deliver reliability, regulatory confidence, and scientific support. Here's what sets us apart:",
+      "buttonText": "Contact Our Team",
+      "cards": {
+        "sfdaCompliance": {
+          "title": "SFDA Compliance",
+          "description": "We strictly adhere to Saudi Food & Drug Authority (SFDA) regulations to ensure every product we supply meets the highest safety and quality standards. You receive fully certified, traceable, and approved biomedical supplies."
+        },
+        "deliveryNetwork": {
+          "title": "Wide Delivery Network",
+          "description": "With operations in Khafji, Riyadh, and Dubai, we ensure fast, reliable deliveries across Saudi Arabia and the UAE. Our logistics system is built to handle urgent lab requirements with efficiency and care."
+        },
+        "trustedBrands": {
+          "title": "Trusted Global Brands",
+          "description": "We partner exclusively with reputable international manufacturers that are ISO-certified and widely recognized in the biomedical field. Our catalog includes high-performance products backed by global trust."
+        },
+        "specialization": {
+          "title": "Strategic Biomedical Specialization",
+          "description": "Biomedical supply is not just a category for us — it's our core focus. Our team understands microbiological, diagnostic, and research requirements, allowing us to guide clients with unmatched expertise."
+        }
+      }
+    },
+    "ourProducts": {
+      "title": "Explore Our Product Categories",
+      "description": "Discover our globally trusted biomedical product categories, used in labs and clinics around the world."
+    },
+    "aboutUs": {
+      "title": "About Najah Dhahabi",
+      "heading": "Your link to global biomedical excellence, delivered with trust and precision.",
+      "description": "At Najah Dhahabi, we connect leading international biomedical manufacturers with local medical institutions across Saudi Arabia and the UAE. With our headquarters in Khafji, and active branches in Riyadh and Dubai, we ensure reliable, compliant, and high-quality delivery of laboratory and diagnostic products.",
+      "buttonText": "Learn More About Us",
+      "imageAlt": "Modern biomedical laboratory"
+    },
+    "contactBanner": {
+      "title": "Have a question? We're ready to assist.",
+      "description": "Can't find what you're looking for? Our team can help source specialized products or create custom solutions for your specific requirements.",
+      "buttonText": "Request a Quote"
+    },
+    "products": {
+      "clinicalDevices": {
+        "title": "Clinical Diagnostic Devices",
+        "description": "Accurate tools for hospitals & labs"
+      },
+      "labInstruments": {
+        "title": "Laboratory Instruments",
+        "description": "Centrifuges, analyzers, incubators"
+      },
+      "consumables": {
+        "title": "Consumables & Reagents",
+        "description": "Lab-grade chemicals & pipettes"
+      },
+      "vetEquipment": {
+        "title": "Veterinary Lab Equipment",
+        "description": "Animal diagnostics made precise"
+      },
+      "foodTesting": {
+        "title": "Food & Water Testing Kits",
+        "description": "Detect contaminants with confidence"
+      },
+      "pharmaTools": {
+        "title": "Pharmaceutical Testing Tools",
+        "description": "Tools for drug quality control"
+      }
+    }
+  },
+  "about": {
+    "title": "About Golden Success",
+    "subtitle": "Leading the industry with innovation and excellence",
+    "description": "Golden Success has been a trusted name in the industry for years, providing high-quality products and exceptional service to our clients worldwide.",
+    "ourMission": "Our Mission",
+    "ourVision": "Our Vision",
+    "ourValues": "Our Values",
+    "teamTitle": "Meet Our Team",
+    "historyTitle": "Our History"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Discover our comprehensive range of quality products",
+    "allProducts": "All Products",
+    "categories": "Categories",
+    "noProducts": "No products found",
+    "productDetails": "Product Details",
+    "specifications": "Specifications",
+    "features": "Features",
+    "relatedProducts": "Related Products"
+  },
+  "industries": {
+    "title": "Industries We Serve",
+    "subtitle": "Providing solutions across various sectors",
+    "description": "We serve a wide range of industries with our specialized products and services."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Business Hours"
+    }
+  },
+  "about": {
+    "heroTitle": "About Us",
+    "heroDescription": "Your Gateway to Reliable Biomedical Solutions",
+    "aboutText": "Najah Dhahabi is a trusted biomedical product distributor based in Saudi Arabia and the UAE. We are committed to bridging the gap between international biomedical manufacturers and local healthcare institutions across the Gulf region. Since our establishment, our mission has been to supply laboratories and diagnostics centers with cutting-edge biomedical tools that enhance accuracy, efficiency, and compliance.",
+    "features": {
+      "premiumProducts": "Premium Biomedical Products. Competitive Pricing.",
+      "quickResponses": "Quick Responses, Reliable Shipping",
+      "backedByExperience": "Backed by Experience. Chosen by Professionals"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide laboratories and healthcare institutions with the highest quality biomedical products — delivered with integrity, speed, and compliance.",
+      "imageAlt1": "Mission small image",
+      "imageAlt2": "Mission large image"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the preferred biomedical supplier in the GCC, fostering scientific excellence through reliable access to world-class lab products.",
+      "imageAlt1": "Vision small image",
+      "imageAlt2": "Vision large image"
+    },
+    "trustedStandards": {
+      "title": "Trusted Standards.\nCertified Partners",
+      "description": "We operate in full compliance with the Saudi Food & Drug Authority (SFDA) and engage only with approved and certified international suppliers. Our commitment to safety and quality ensures that every product delivered aligns with local and international healthcare regulations."
+    }
+  },
+  "contact": {
+    "contactUs": {
+      "title": "Contact Us",
+      "subtitle": "Have Questions? Speak to Our Compliance-Ready Team",
+      "phone": {
+        "label": "Call us for inquiries.",
+        "number": "0571860900"
+      },
+      "email": {
+        "label": "E-mail",
+        "address": "info@goldensuccessksa.com"
+      },
+      "address": {
+        "label": "Head Office – Khafji",
+        "location": "Al-Khafji, Eastern Province, Saudi Arabia",
+        "locationArabic": "المنطقة الشرقية"
+      },
+      "social": {
+        "title": "Stay connected"
+      }
+    },
+    "form": {
+      "title": "Get a Call Back Now !",
+      "subtitle": "Have a specific product or request? Fill out the form below — we'll respond promptly.",
+      "fields": {
+        "fullName": {
+          "label": "Full Name",
+          "placeholder": "Your Name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Your email"
+        },
+        "mobile": {
+          "label": "Mobile",
+          "placeholder": "Mobile Number"
+        },
+        "company": {
+          "label": "Company",
+          "placeholder": "Company Name"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Your Message"
+        }
+      },
+      "submitButton": "Send Enquiry",
+      "successMessage": "Enquiry sent!"
+    }
+  },
+  "footer": {
+    "description": "Certified Biomedical Products. Locally Delivered.",
+    "quickLinks": "Quick Links",
+    "contactDetails": "Contact Details",
+    "stayConnected": "Stay connected",
+    "headOffice": "Head Office - Khafji",
+    "address": "Al-Khafji, Eastern Province, Saudi Arabia",
+    "addressArabic": "المنطقة الشرقية",
+    "phone": "0571860900",
+    "email": "info@goldensuccessksa.com",
+    "copyright": "© 2025 Najah Dhahabi Trading Co. All rights reserved.",
+    "termsConditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "companyNameArabic": "شركة نجاح ذهبي التجارية",
+    "navigation": {
+      "home": "Home",
+      "about": "About Us",
+      "products": "Products",
+      "industries": "Industries Served",
+      "whyChooseUs": "Why Choose Us",
+      "contact": "Contact Us"
+    }
+  }
+}

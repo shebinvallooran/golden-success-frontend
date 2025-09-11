@@ -1,0 +1,888 @@
+// ===================================
+// GOLDEN SUCCESS - Main SCSS File
+// ===================================
+
+// Import Variables
+@import './variables';
+
+// Global Styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $font-family-sans;
+  line-height: $leading-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $bg-secondary;
+  color: $text-primary;
+  font-size: $text-base;
+  font-weight: $font-normal;
+}
+
+// Utility Classes
+.text-primary {
+  color: $primary-color !important;
+}
+
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+.bg-secondary {
+  background-color: ($secondary-color) ;
+}
+
+.color-secondary {
+  color: $secondary-color !important;
+}
+
+.bg-secondary-light {
+  background-color: rgba($secondary-color, 0.08);
+}
+
+.border-primary {
+  border-color: $primary-color !important;
+}
+
+.hover-primary:hover {
+  color: $primary-color !important;
+}
+
+.hover-bg-primary:hover {
+  background-color: $primary-color !important;
+}
+
+// Button Styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-medium;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: $rounded-full;
+  transition: all $transition-normal;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: $white;
+  border-color: $primary-color;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+  }
+}
+
+.btn-gradient {
+  background: $gradient-primary-secondary;
+  color: $white;
+  font-weight: $font-semibold;
+  font-size: $text-lg;
+  padding: $spacing-4 $spacing-8;
+  border-radius: $rounded-full;
+  transition: all $transition-normal;
+  box-shadow: $shadow-lg;
+
+  &:hover:not(:disabled) {
+    background: $white;
+    color: $primary-color;
+  }
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: $primary-color;
+  border-color: $primary-color;
+  
+  &:hover:not(:disabled) {
+    background-color: $primary-color;
+    color: $white;
+  }
+}
+
+.btn-sm {
+  padding: $btn-padding-sm;
+  font-size: $text-sm;
+}
+
+.btn-md {
+  padding: $btn-padding-md;
+  font-size: $text-sm;
+}
+
+.btn-lg {
+  padding: $btn-padding-lg;
+  font-size: $text-base;
+}
+
+.quote-button {
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  color: #04C39A;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 14px 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  font-family: inherit;
+  
+  // Create gradient border effect
+  background: 
+    $gradient-primary-secondary padding-box,
+    $gradient-primary-secondary border-box;
+  
+  &:hover {
+    background: $gradient-primary-secondary;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(4, 195, 154, 0.3);
+    
+    .arrow {
+      transform: translateX(4px);
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  // Arrow styling
+  .arrow {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  // Filled variant
+  &--filled {
+    background: $gradient-primary-secondary;
+    color: white;
+    box-shadow: 0 4px 15px rgba(4, 195, 154, 0.3);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+      border-radius: 50px;
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(4, 195, 154, 0.4);
+    }
+  }
+}
+
+
+// Card Styles
+.card {
+  background-color: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  padding: $card-padding;
+}
+
+// Form Styles
+.form-input {
+  width: 100%;
+  padding: $input-padding;
+  border: 1px solid $input-border-color;
+  border-radius: $rounded-md;
+  font-size: $text-base;
+  transition: border-color $transition-fast;
+  
+  &:focus {
+    outline: none;
+    border-color: $input-focus-border-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+  
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+// Header Styles
+.header {
+  background-color: $white;
+  border-bottom: 1px solid $border-light;
+  height: $header-height;
+  
+  .logo-icon {
+    color: $primary-color;
+  }
+  
+  .nav-link {
+    color: $text-secondary;
+    font-weight: $font-medium;
+    font-size: $text-sm;
+    text-decoration: none;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $primary-color;
+    }
+    
+    &.active {
+      color: $primary-color;
+    }
+  }
+  
+  .icon-button {
+    color: $text-muted;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Responsive Utilities
+@media (max-width: $breakpoint-sm) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+// Animation Classes
+.fade-in {
+  animation: fadeIn $transition-normal ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn $transition-normal ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Loading Spinner
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid $gray-200;
+  border-top: 2px solid $primary-color;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $easing: ease) {
+  transition: $property $duration $easing;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}
+
+.section-header {
+  max-width: 1281px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: stretch; // Ensure children take full width
+  width: 100%;
+
+  // Responsive padding adjustments
+  @media (max-width: 768px) {
+    padding: 60px 16px;
+    gap: 28px;
+    align-items: stretch; // Force full width alignment on mobile
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 16px;
+    gap: 24px;
+    align-items: stretch; // Ensure no centering on mobile
+  }
+
+  .logo-section {
+    @include flex-center;
+    gap: 12px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+
+    @media (max-width: 480px) {
+      gap: 10px;
+    }
+
+    &.rtl-logo {
+      justify-content: flex-start;
+      flex-direction: row;
+    }
+
+    .logo-icon {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0; // Prevent shrinking on small screens
+
+      @media (max-width: 480px) {
+        width: 18px;
+        height: 18px;
+      }
+
+      .outer-circle {
+        background: $primary-color;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @media (max-width: 480px) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .inner-circle {
+        background: white;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 480px) {
+          width: 12px;
+          height: 12px;
+          top: 3px;
+          left: 3px;
+        }
+      }
+
+      .green-dot {
+        width: 9px;
+        height: 9px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        display: block;
+
+        @media (max-width: 480px) {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+
+    .logo-text {
+      color: $primary-color;
+      font-family: "InstrumentSans-SemiBold", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.25px;
+      line-height: 1.2;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    gap: 250px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    // Large desktop
+    @media (max-width: 1400px) {
+      gap: 150px;
+    }
+
+    // Desktop/Tablet
+    @media (max-width: 1200px) {
+      gap: 80px;
+    }
+
+    // Tablet
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 40px;
+      align-items: stretch; // Full width on mobile
+      width: 100%;
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 480px) {
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .content-left {
+      flex: 0 0 600px;
+
+      @media (max-width: 1200px) {
+        flex: 0 0 400px;
+      }
+
+      @media (max-width: 1024px) {
+        flex: 1;
+        width: 100%;
+      }
+
+      .main-heading {
+        font-family: "InstrumentSans-Medium", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 46px;
+        line-height: 53.2px;
+        font-weight: 500;
+        margin: 0;
+        text-align: left;
+
+        // Large screens adjustments
+        @media (max-width: 1200px) {
+          font-size: 42px;
+          line-height: 1.2;
+        }
+
+        // Tablet
+        @media (max-width: 1024px) {
+          font-size: 40px;
+          line-height: 1.2;
+        }
+
+        // Small tablet/Large mobile
+        @media (max-width: 768px) {
+          font-size: 32px;
+          line-height: 1.2;
+        }
+
+        // Mobile
+        @media (max-width: 480px) {
+          font-size: 28px;
+          line-height: 1.1;
+        }
+
+        // Small mobile
+        @media (max-width: 360px) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .content-right {
+      flex: 0 0 487px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      align-items: flex-start; // Left align on all screens
+      width: 100%;
+
+      @media (max-width: 1200px) {
+        flex: 0 0 400px;
+      }
+
+      @media (max-width: 1024px) {
+        flex: 1;
+        width: 100%;
+        align-items: flex-start; // Explicitly force left alignment on mobile
+      }
+
+      @media (max-width: 768px) {
+        align-items: flex-start; // Double ensure left alignment
+        width: 100%;
+      }
+
+      @media (max-width: 480px) {
+        align-items: flex-start; // Triple ensure left alignment
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        gap: 24px;
+      }
+
+      @media (max-width: 480px) {
+        gap: 20px;
+      }
+
+      .description {
+        color: $text-secondary;
+        font-family: "InstrumentSans-Regular", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 18px;
+        line-height: 25.2px;
+        letter-spacing: -0.25px;
+        font-weight: 400;
+        margin: 0;
+        text-align: left;
+
+        @media (max-width: 1024px) {
+          font-size: 17px;
+          line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 15px;
+          line-height: 1.5;
+        }
+      }
+
+      .cta-button {
+        @include flex-center;
+        gap: 10px;
+        padding: 19px 20px;
+        border: 1px solid $black-color;
+        border-radius: 40px;
+        background: transparent;
+        cursor: pointer;
+        @include transition();
+        width: fit-content;
+
+        // Mobile-specific button adjustments
+        @media (max-width: 1024px) {
+          align-self: center; // Center the button on tablet/mobile
+        }
+
+        @media (max-width: 768px) {
+          padding: 16px 18px;
+          gap: 8px;
+        }
+
+        @media (max-width: 480px) {
+          padding: 14px 16px;
+          width: 100%; // Full width on small mobile
+          max-width: 280px; // But with a reasonable max-width
+          justify-content: center;
+        }
+
+        span {
+          color: $black-color;
+          font-family: "HelveticaNeue-Regular", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          @include transition(color);
+          white-space: nowrap; // Prevent text wrapping
+
+          @media (max-width: 768px) {
+            font-size: 15px;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 14px;
+          }
+        }
+
+        .arrow-icon {
+          width: 14px;
+          height: 14px;
+          color: $black-color;
+          @include transition(color);
+          flex-shrink: 0; // Prevent icon from shrinking
+
+          @media (max-width: 768px) {
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+        &:hover {
+          background-color: $black-color;
+          border-color: $black-color;
+
+          span,
+          .arrow-icon {
+            color: white;
+          }
+        }
+
+        &:focus {
+          outline: 2px solid $black-color;
+          outline-offset: 2px;
+        }
+
+        // Touch device improvements
+        @media (hover: none) and (pointer: coarse) {
+          &:active {
+            background-color: $black-color;
+            border-color: $black-color;
+            
+            span,
+            .arrow-icon {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // RTL-specific styles
+  &.rtl {
+    .content-wrapper {
+      &.rtl-content {
+        direction: rtl;
+
+        .content-left {
+          &.rtl-left {
+            .main-heading {
+              &.rtl-heading {
+                text-align: right;
+                font-family: 'Cairo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+                line-height: 1.4;
+                letter-spacing: 0.02em;
+              }
+            }
+          }
+        }
+
+        .content-right {
+          &.rtl-right {
+            align-items: flex-end;
+
+            @media (max-width: 1024px) {
+              align-items: flex-end;
+            }
+
+            @media (max-width: 768px) {
+              align-items: flex-end;
+            }
+
+            @media (max-width: 480px) {
+              align-items: flex-end;
+            }
+
+            .description {
+              &.rtl-description {
+                text-align: right;
+                font-family: 'Cairo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+                line-height: 1.8;
+                letter-spacing: 0.01em;
+              }
+            }
+
+            .cta-button {
+              &.rtl-button {
+                flex-direction: row-reverse;
+
+                @media (max-width: 1024px) {
+                  align-self: center;
+                }
+
+                @media (max-width: 480px) {
+                  align-self: center;
+                }
+
+                .arrow-icon {
+                  &.rtl-arrow {
+                    transform: scaleX(-1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .logo-section {
+      &.rtl-logo {
+        .logo-text {
+          font-family: 'Cairo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// Why Us Section RTL/LTR Support
+.why-us {
+  .rtl-section {
+    direction: rtl;
+
+    .font-cairo {
+      font-family: 'Cairo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    // Keep normal flex direction for card icons in RTL
+    .card-icon-container {
+      flex-direction: row !important;
+    }
+  }
+
+  .ltr-section {
+    direction: ltr;
+
+    // Keep normal flex direction for card icons in LTR
+    .card-icon-container {
+      flex-direction: row !important;
+    }
+  }
+}
+
+// Global font classes for RTL support
+.font-cairo {
+  font-family: 'Cairo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+// RTL text alignment that overrides Tailwind's RTL behavior
+.rtl-text-align {
+  text-align: right !important;
+}
+
+// Enhanced card hover effects with performance optimizations
+.bg-gray-100 {
+  // Remove the CSS transition since Framer Motion handles it
+  will-change: transform;
+  backface-visibility: hidden;
+
+  // Only apply hover effects on devices that support hover
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      // Framer Motion handles these animations now
+    }
+  }
+}
+
+// Responsive adjustments for Why Us cards
+@media (max-width: 1024px) {
+  .why-us {
+    .rtl-section,
+    .ltr-section {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      > div {
+        order: unset !important;
+        width: 100%;
+        max-width: 600px;
+
+        &:last-child {
+          order: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .why-us {
+    .rtl-section,
+    .ltr-section {
+      padding: 1rem;
+      gap: 1.5rem;
+
+      .max-w-md {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .why-us {
+    .rtl-section,
+    .ltr-section {
+      padding: 0.5rem;
+      gap: 1rem;
+
+      .w-80 {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+      }
+    }
+  }
+}

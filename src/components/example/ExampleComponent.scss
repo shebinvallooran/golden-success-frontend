@@ -1,0 +1,165 @@
+// Import variables
+@import '../../styles/variables';
+
+.example-component {
+  padding: $spacing-8;
+  background-color: $bg-secondary;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-card {
+  background-color: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  padding: $card-padding;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.example-title {
+  color: $primary-color;
+  font-size: $text-3xl;
+  font-weight: $font-bold;
+  margin-bottom: $spacing-4;
+  font-family: $font-family-sans;
+}
+
+.example-text {
+  color: $text-secondary;
+  font-size: $text-base;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-6;
+}
+
+.example-buttons {
+  display: flex;
+  gap: $spacing-4;
+  justify-content: center;
+  margin-bottom: $spacing-8;
+  flex-wrap: wrap;
+}
+
+.btn-primary-custom {
+  background-color: $primary-color;
+  color: $white;
+  border: 2px solid $primary-color;
+  padding: $btn-padding-md;
+  border-radius: $rounded-full;
+  font-weight: $font-medium;
+  font-size: $text-sm;
+  cursor: pointer;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+  }
+}
+
+.btn-outline-custom {
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  padding: $btn-padding-md;
+  border-radius: $rounded-full;
+  font-weight: $font-medium;
+  font-size: $text-sm;
+  cursor: pointer;
+  transition: all $transition-normal;
+  
+  &:hover {
+    background-color: $primary-color;
+    color: $white;
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+  }
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: $spacing-4;
+  margin-top: $spacing-6;
+}
+
+.color-box {
+  padding: $spacing-4;
+  border-radius: $rounded-lg;
+  color: $white;
+  text-align: center;
+  font-weight: $font-medium;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  
+  span {
+    font-size: $text-sm;
+  }
+  
+  code {
+    font-family: $font-family-mono;
+    font-size: $text-xs;
+    background-color: rgba($white, 0.2);
+    padding: $spacing-1 $spacing-2;
+    border-radius: $rounded;
+  }
+}
+
+.primary-color {
+  background-color: $primary-color;
+}
+
+.primary-light {
+  background-color: $primary-light;
+}
+
+.primary-dark {
+  background-color: $primary-dark;
+}
+
+// Responsive design
+@media (max-width: $breakpoint-sm) {
+  .example-component {
+    padding: $spacing-4;
+  }
+  
+  .example-card {
+    padding: $spacing-4;
+  }
+  
+  .example-title {
+    font-size: $text-2xl;
+  }
+  
+  .example-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary-custom,
+  .btn-outline-custom {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .color-palette {
+    grid-template-columns: 1fr;
+  }
+}
