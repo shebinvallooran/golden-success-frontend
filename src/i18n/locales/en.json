@@ -109,6 +109,13 @@
       "buttonText": "Request a Quote"
     },
     "products": {
+      "title": "Our Products",
+      "subtitle": "Comprehensive Biomedical Solutions for Laboratories, Clinics, and Research Facilities",
+      "description": "At Najah Dhahabi, we supply a complete range of certified biomedical products sourced from trusted global manufacturers. Our catalog is tailored to meet the needs of clinical labs, diagnostic centers, pharmaceutical R&D, veterinary facilities, and food & water testing labs — all fully compliant with SFDA and international standards.",
+      "ourRange": "Our Product Range",
+      "quoteRequested": "Quote requested for",
+      "product": "Product",
+      "viewAllProducts": "View All Products",
       "clinicalDevices": {
         "title": "Clinical Diagnostic Devices",
         "description": "Accurate tools for hospitals & labs"
@@ -135,15 +142,16 @@
       }
     }
   },
-  "about": {
-    "title": "About Golden Success",
-    "subtitle": "Leading the industry with innovation and excellence",
-    "description": "Golden Success has been a trusted name in the industry for years, providing high-quality products and exceptional service to our clients worldwide.",
-    "ourMission": "Our Mission",
-    "ourVision": "Our Vision",
-    "ourValues": "Our Values",
-    "teamTitle": "Meet Our Team",
-    "historyTitle": "Our History"
+  "industries": {
+    "title": "Industries We Serve",
+    "subtitle": "Empowering Progress Across Laboratories, Clinics & Industry",
+    "aboutText": "At Najah Dhahabi, we cater to a wide spectrum of scientific and diagnostic sectors with precision-engineered biomedical products. Our portfolio supports everything from cutting-edge clinical diagnostics to environmental and food safety monitoring. We understand that every industry has unique standards, and we deliver solutions that meet global compliance, SFDA guidelines, and ISO benchmarks.",
+    "heroTitle": "Industries We Serve",
+    "heroDescription": "Empowering Progress Across Laboratories, Clinics & Industry",
+    "description": "We serve a wide range of industries with our specialized products and services.",
+    "errors": {
+      "fetchIndustries": "Failed to load industries. Please try again later."
+    }
   },
   "products": {
     "title": "Our Products",
@@ -156,34 +164,15 @@
     "features": "Features",
     "relatedProducts": "Related Products"
   },
-  "industries": {
-    "title": "Industries We Serve",
-    "subtitle": "Providing solutions across various sectors",
-    "description": "We serve a wide range of industries with our specialized products and services."
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Get in touch with our team",
-    "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "form": {
-      "name": "Full Name",
-      "email": "Email Address",
-      "phone": "Phone Number",
-      "company": "Company Name",
-      "subject": "Subject",
-      "message": "Message",
-      "send": "Send Message",
-      "required": "This field is required",
-      "invalidEmail": "Please enter a valid email address"
-    },
-    "info": {
-      "address": "Address",
-      "phone": "Phone",
-      "email": "Email",
-      "hours": "Business Hours"
-    }
-  },
   "about": {
+    "title": "About Us",
+    "subtitle": "Leading the industry with innovation and excellence",
+    "description": "Golden Success has been a trusted name in the industry for years, providing high-quality products and exceptional service to our clients worldwide.",
+    "ourMission": "Our Mission",
+    "ourVision": "Our Vision",
+    "ourValues": "Our Values",
+    "teamTitle": "Meet Our Team",
+    "historyTitle": "Our History",
     "heroTitle": "About Us",
     "heroDescription": "Your Gateway to Reliable Biomedical Solutions",
     "aboutText": "Najah Dhahabi is a trusted biomedical product distributor based in Saudi Arabia and the UAE. We are committed to bridging the gap between international biomedical manufacturers and local healthcare institutions across the Gulf region. Since our establishment, our mission has been to supply laboratories and diagnostics centers with cutting-edge biomedical tools that enhance accuracy, efficiency, and compliance.",

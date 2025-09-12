@@ -1,11 +1,15 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { AboutTextSection, HeroSection } from '../../components/page-hero-text/PageHeroAndText'
-import IndustriesList from './components/IndustriesList'
-import { ArrowRight, ArrowRightIcon } from 'lucide-react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { AboutTextSection, HeroSection } from '../../components/page-hero-text/PageHeroAndText';
+import IndustriesList from './components/IndustriesList';
+import { ArrowRight, ArrowRightIcon } from 'lucide-react';
 
 function Industries() {
-    const aboutText = "At Najah Dhahabi, we cater to a wide spectrum of scientific and diagnostic sectors with precision-engineered biomedical products. Our portfolio supports everything from cutting-edge clinical diagnostics to environmental and food safety monitoring. We understand that every industry has unique standards, and we deliver solutions that meet global compliance, SFDA guidelines, and ISO benchmarks."
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
+  
+  const aboutText = t('industries.aboutText', 'At Najah Dhahabi, we cater to a wide spectrum of scientific and diagnostic sectors with precision-engineered biomedical products. Our portfolio supports everything from cutting-edge clinical diagnostics to environmental and food safety monitoring. We understand that every industry has unique standards, and we deliver solutions that meet global compliance, SFDA guidelines, and ISO benchmarks.');
   
   // Animation variants
   const containerVariants = {
@@ -41,18 +45,20 @@ function Industries() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      dir={isRTL ? 'rtl' : 'ltr'}
+      className={`min-h-screen ${isRTL ? 'rtl font-cairo' : 'ltr'}`}
     >
         {/* hero section */}
         <div>
           <HeroSection 
               imageUrl={'/img/industries/industries-hero-image.webp'}
-              heroTitle={'Industries We Serve'}
-              heroDescription={'Empowering Progress Across Laboratories, Clinics & Industry'}
+              heroTitle={t('industries.heroTitle', 'Industries We Serve')}
+              heroDescription={t('industries.heroDescription', 'Empowering Progress Across Laboratories, Clinics & Industry')}
           />
         </div>
         
         <motion.section 
-          className='py-20 px-4 sm:px-8 bg-[#FAF9F6] font-sans'
+          className={`py-20 px-4 sm:px-8 bg-[#FAF9F6] ${isRTL ? 'text-right' : 'text-left'}`}
           variants={sectionVariants}
         >
             <motion.div
@@ -70,6 +76,7 @@ function Industries() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          className={isRTL ? 'rtl' : 'ltr'}
         >
             <IndustriesList />
         </motion.section>
