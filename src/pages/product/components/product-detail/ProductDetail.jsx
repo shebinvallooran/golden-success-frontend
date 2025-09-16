@@ -15,7 +15,7 @@ export const ProductDetail = ({
   // Handle missing product
   if (!product) {
     return (
-      <div className="mx-auto p-6 pt-20 pb-20 bg-[#FAF9F6] text-center">
+      <div className="mx-auto p-6 pt-20 pb-20 bg-[#F7F9F2] text-center">
         <p className="text-gray-600">Product not found</p>
         <button
           onClick={onBackToList}
@@ -58,7 +58,7 @@ export const ProductDetail = ({
 
   return (
     <motion.div
-      className="mx-auto p-6 pt-20 pb-20 bg-[#FAF9F6]"
+      className="mx-auto p-6 pt-20 pb-20 bg-[#F7F9F2]"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

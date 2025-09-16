@@ -5,7 +5,8 @@
     "products": "المنتجات",
     "industries": "الصناعات",
     "contact": "اتصل بنا",
-    "requestQuote": "طلب عرض سعر"
+    "requestQuote": "طلب عرض سعر",
+    "requestQuoteText": "ابدأ بطلب عرض أسعار مختبرك الآن"
   },
   "common": {
     "loading": "جاري التحميل...",

@@ -5,7 +5,8 @@
     "products": "Products",
     "industries": "Industries",
     "contact": "Contact Us",
-    "requestQuote": "Request a Quote"
+    "requestQuote": "Request a Quote",
+    "requestQuoteText": "Start Your Lab Order Quote"
   },
   "common": {
     "loading": "Loading...",

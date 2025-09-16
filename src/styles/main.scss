@@ -96,7 +96,7 @@ body {
 .btn-gradient {
   background: $gradient-primary-secondary;
   color: $white;
-  font-weight: $font-semibold;
+  font-weight: $font-medium;
   font-size: $text-lg;
   padding: $spacing-4 $spacing-8;
   border-radius: $rounded-full;
@@ -354,20 +354,20 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 20px;
   align-items: stretch; // Ensure children take full width
   width: 100%;
 
   // Responsive padding adjustments
   @media (max-width: 768px) {
     padding: 60px 16px;
-    gap: 28px;
+    gap: 16px;
     align-items: stretch; // Force full width alignment on mobile
   }
 
   @media (max-width: 480px) {
     padding: 40px 16px;
-    gap: 24px;
+    gap: 10px;
     align-items: stretch; // Ensure no centering on mobile
   }
 

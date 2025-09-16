@@ -42,8 +42,9 @@ module.exports = {
         'gradient-diagonal-primary-secondary': 'linear-gradient(45deg, #04C39A 0%, #00B4D8 50%, #04C39A 100%)'
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
-        mono: ['Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'monospace']
+        sans: ['Instrument Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+        mono: ['Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', 'monospace'],
+        kufi: ['Reem Kufi', 'serif'],
       },
       spacing: {
         '18': '4.5rem',

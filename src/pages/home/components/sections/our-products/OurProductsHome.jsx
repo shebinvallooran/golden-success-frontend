@@ -117,7 +117,7 @@ function OurProductsHome() {
 
   return (
     <motion.section 
-      className="font-sans py-16 px-4 bg-[#f0f1f0] min-h-screen"
+      className="font-sans py-16 px-4 bg-[#FAF9F6] min-h-screen"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}

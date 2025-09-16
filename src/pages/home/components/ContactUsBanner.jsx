@@ -50,7 +50,7 @@ function ContactUsBanner() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <motion.h2
-            className={`text-lg sm:text-2xl md:text-4xl lg:text-[46px] font-semibold leading-tight lg:leading-[53.2px] px-2 ${isRTL ? 'text-right' : 'text-left'}`}
+            className={`text-lg sm:text-2xl md:text-4xl lg:text-[40px] font-semibold leading-tight lg:leading-[53.2px] px-2 ${isRTL ? 'text-right' : 'text-left'}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

@@ -101,7 +101,7 @@ function Product() {
 
       {/* Description */}
       <motion.section
-        className={`py-20 px-4 sm:px-8 bg-[#FAF9F6] ${i18n.dir() === 'rtl' ? 'text-right' : 'text-left'}`}
+        className={`py-20 px-4 sm:px-8 bg-[#F7F9F2] ${i18n.dir() === 'rtl' ? 'text-right' : 'text-left'}`}
         variants={sectionVariants}
       >
         <div className={`max-w-6xl mx-auto ${i18n.dir() === 'rtl' ? 'text-right' : 'text-left'}`}>
