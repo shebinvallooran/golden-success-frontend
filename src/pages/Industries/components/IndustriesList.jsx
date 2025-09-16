@@ -1,65 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { IndustryCard } from './IndustriesCard';
-
-const industriesData = [
-  {
-    imageSrc: '/img/industries/clinicalLaboratories.png',
-    title: 'Clinical Laboratories',
-    points: [
-      'Solutions for microbiology, hematology, and biochemistry labs.',
-      'Rapid diagnostic kits, stains, reagents, culture media.',
-      'Supporting hospital labs and private diagnostic centers.',
-    ],
-  },
-  {
-    imageSrc: '/img/industries/pharmaceuticalIndustry.png',
-    title: 'Pharmaceutical Industry',
-    points: [
-      'Bulk reagents, analytical chemicals, media powders for R&D.',
-      'QC tools to support manufacturing and formulation labs.',
-      'Compliant with international regulatory frameworks.',
-    ],
-  },
-  {
-    imageSrc: '/img/industries/food-Beverage.png',
-    title: 'Food & Beverage Testing Labs',
-    points: [
-      'Kits for foodborne pathogen detection, hygiene monitoring.',
-      'Media and reagents tailored to meat, dairy, and processed foods.',
-      'Ensure public safety through microbiological integrity.',
-    ],
-  },
-  {
-    imageSrc: '/img/industries/dairy-milk.png',
-    title: 'Dairy & Milk Testing Facilities',
-    points: [
-      'Solutions for bacterial contamination, spoilage detection.',
-      'Rapid test strips, media, and veterinary diagnostic tools.',
-      'Ideal for cooperatives, dairies, and quality labs.',
-    ],
-  },
-  {
-    imageSrc: '/img/industries/veterinary.png',
-    title: 'Veterinary Diagnostic Centers',
-    points: [
-      'Animal health diagnostic kits for clinical and field use.',
-      'Serological and rapid assay tools for zoonotic disease monitoring',
-      'Trusted by veterinary hospitals and government health bodies.',
-    ],
-  },
-  {
-    imageSrc: '/img/industries/water-enviorment.png',
-    title: 'Water & Environmental Testing',
-    points: [
-      'Microbial testing kits for drinking water, waste, and surface water.',
-      'Disposables and culture media for safe, precise analysis.',
-      'Ideal for government labs, utilities, and research institutions.',
-    ],
-  },
-];
+import { getCategoriesList, getImageUrl } from '../../../api/axiosInstance';
 
 const IndustriesList = () => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
+  const [industries, setIndustries] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -89,19 +39,69 @@ const IndustriesList = () => {
     }
   };
 
+  const fetchIndustries = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await getCategoriesList();
+      if (response.data && Array.isArray(response.data)) {
+        // Sort by priority if needed, then by id as fallback
+        const sortedIndustries = [...response.data].sort((a, b) => 
+          (a.priority || 0) - (b.priority || 0) || a.id - b.id
+        );
+        setIndustries(sortedIndustries);
+      }
+    } catch (err) {
+      console.error('Error fetching industries:', err);
+      setError(t('errors.fetchIndustries', 'Failed to load industries. Please try again later.'));
+    } finally {
+      setLoading(false);
+    }
+  }, [t]);
+
+  useEffect(() => {
+    fetchIndustries();
+  }, [fetchIndustries]);
+
+  // Format points for display based on language
+  const getIndustryPoints = (industry) => {
+    return [
+      industry[`point1_${i18n.language}`] || industry.point1_en,
+      industry[`point2_${i18n.language}`] || industry.point2_en,
+      industry[`point3_${i18n.language}`] || industry.point3_en
+    ].filter(Boolean); // Remove any undefined points
+  };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[50vh]">
+        <div className="animate-pulse text-lg text-gray-600">
+          {t('common.loading', 'Loading...')}
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-10 text-red-500">
+        {error}
+      </div>
+    );
+  }
+
   return (
-    <section className="p-6">
+    <section className={`p-6 ${isRTL ? 'rtl font-cairo' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-6xl mx-auto">
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${isRTL ? 'text-right' : 'text-left'}`}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {industriesData.map((industry, index) => (
+          {industries.map((industry, index) => (
             <motion.div
-              key={index}
+              key={industry.id || index}
               variants={cardVariants}
               whileHover={{ 
                 y: -8,
@@ -109,9 +109,10 @@ const IndustriesList = () => {
               }}
             >
               <IndustryCard
-                imageSrc={industry.imageSrc}
-                title={industry.title}
-                points={industry.points}
+                imageSrc={getImageUrl(industry.image_url) || '/logo512.png'}
+                title={industry[`name_${i18n.language}`] || industry.name_en || t('common.untitled', 'Untitled')}
+                description={industry[`home_description_${i18n.language}`] || industry.home_description_en || ''}
+                points={getIndustryPoints(industry)}
               />
             </motion.div>
           ))}

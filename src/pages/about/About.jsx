@@ -73,7 +73,7 @@ function About() {
         
         {/* features */}
         <motion.section 
-          className="py-20 px-4 sm:px-8 bg-[#FAF9F6] font-sans"
+          className="py-20 px-4 sm:px-8 bg-[#F7F9F2] font-sans"
           variants={sectionVariants}
         >
             <div className="max-w-6xl mx-auto">

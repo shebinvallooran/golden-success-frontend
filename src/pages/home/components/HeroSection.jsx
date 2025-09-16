@@ -65,7 +65,7 @@ const HeroSection = () => {
         >
           {/* Trusted Badge */}
           <motion.div variants={fadeInScale} className="mb-6">
-            <TrustedBadge />
+            <TrustedBadge text={t('common.trustedSupplier')} />
           </motion.div>
           
           {/* Main Heading */}
@@ -89,10 +89,10 @@ const HeroSection = () => {
             variants={fadeInUp}
             whileHover={buttonHover}
             whileTap={buttonTap}
-            className="btn btn-gradient inline-flex items-center text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
+            className="btn btn-gradient inline-flex items-center text-sm sm:text-sm px-2 sm:px-6 py-1 sm:py-3"
             onClick={()=>navigation('/contact')}
           >
-            <span>{t('navigation.requestQuote')}</span>
+            <span>{t('navigation.requestQuoteText')}</span>
             <motion.div
               animate={{ x: isRTL ? [-5, 0, -5] : [0, 5, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
