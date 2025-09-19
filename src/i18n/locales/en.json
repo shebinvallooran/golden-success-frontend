@@ -202,51 +202,61 @@
   "contact": {
     "contactUs": {
       "title": "Contact Us",
-      "subtitle": "Have Questions? Speak to Our Compliance-Ready Team",
+      "subtitle": "Have questions? Speak with our standards-compliant team",
       "phone": {
         "label": "Call us for inquiries.",
         "number": "0571860900"
       },
       "email": {
-        "label": "E-mail",
+        "label": "Email",
         "address": "info@goldensuccessksa.com"
       },
       "address": {
-        "label": "Head Office – Khafji",
+        "label": "Head Office - Khafji",
         "location": "Al-Khafji, Eastern Province, Saudi Arabia",
         "locationArabic": "المنطقة الشرقية"
       },
       "social": {
-        "title": "Stay connected"
+        "title": "Stay Connected"
       }
     },
     "form": {
-      "title": "Get a Call Back Now !",
-      "subtitle": "Have a specific product or request? Fill out the form below — we'll respond promptly.",
+      "title": "Get in Touch Now!",
+      "subtitle": "Have a specific product or inquiry? Fill out the form below — we'll respond quickly.",
+      "successMessage": "Your inquiry has been sent!",
+      "errorMessage": "There was an error submitting your request. Please try again.",
+      "submitButton": "Submit Inquiry",
+      "submittingButton": "Sending...",
       "fields": {
         "fullName": {
           "label": "Full Name",
-          "placeholder": "Your Name"
+          "placeholder": "Your name"
         },
         "email": {
-          "label": "Email",
+          "label": "Email Address",
           "placeholder": "Your email"
         },
         "mobile": {
-          "label": "Mobile",
-          "placeholder": "Mobile Number"
+          "label": "Mobile Number",
+          "placeholder": "Your mobile number"
         },
         "company": {
           "label": "Company",
-          "placeholder": "Company Name"
+          "placeholder": "Company name"
+        },
+        "productName": {
+          "label": "Product Name",
+          "placeholder": "Enter product name"
+        },
+        "quantity": {
+          "label": "Quantity",
+          "placeholder": "Enter quantity"
         },
         "message": {
           "label": "Message",
-          "placeholder": "Your Message"
+          "placeholder": "Your message"
         }
-      },
-      "submitButton": "Send Enquiry",
-      "successMessage": "Enquiry sent!"
+      }
     }
   },
   "footer": {

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://golden-success-backend.onrender.com';
 
-const apiClient = axios.create({
+export const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api/v1`, // Replace with your API
   headers: {
     'Content-Type': 'application/json',

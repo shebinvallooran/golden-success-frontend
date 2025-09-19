@@ -126,14 +126,14 @@ function OurProductsHome() {
       <div className="container mx-auto max-w-[1440px] text-center">
         {/* Section Header */}
         <motion.div 
-          className="flex flex-col items-center gap-[26px] mb-12"
+          className="flex flex-col items-center text-center gap-4 md:gap-6 mb-8 md:mb-12 px-4 md:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <motion.h2
-            className={`text-[46px] font-semibold text-[#00271f] leading-[53.2px]`}
+            className={`text-3xl md:text-4xl lg:text-[46px] font-semibold text-[#00271f] leading-tight lg:leading-[53.2px]`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -142,7 +142,7 @@ function OurProductsHome() {
             {t('home.ourProducts.title')}
           </motion.h2>
           <motion.p
-            className={`text-[18px] text-[#00271fcc] leading-[25.2px] max-w-2xl`}
+            className={`text-base md:text-lg text-[#00271fcc] leading-relaxed max-w-2xl`}
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -152,47 +152,47 @@ function OurProductsHome() {
           </motion.p>
         </motion.div>
 
-        {/* Categories Grid - Using a single flex container with wrapping */}
-        {loading ? (
-          <div className="flex justify-center items-center py-16">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00271f]"></div>
-          </div>
-        ) : error ? (
-          <div className="flex justify-center items-center py-16">
-            <p className="text-red-500 text-lg">{error}</p>
-          </div>
-        ) : (
-          <motion.div
-            className="flex flex-wrap justify-center gap-[30px]"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {categoriesToDisplay && categoriesToDisplay.length > 0 && categoriesToDisplay.map((category) => {
-              // Get the appropriate title and description based on language
-              const title = isRTL ? category.name_ar || category.name_en : category.name_en;
-              const description = isRTL ? category.home_description_ar || category.home_description_en : category.home_description_en;
+          {/* Categories Grid - Using a single flex container with wrapping */}
+          {loading ? (
+            <div className="flex justify-center items-center py-16">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00271f]"></div>
+            </div>
+          ) : error ? (
+            <div className="flex justify-center items-center py-16">
+              <p className="text-red-500 text-lg">{error}</p>
+            </div>
+          ) : (
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {categoriesToDisplay && categoriesToDisplay.length > 0 && categoriesToDisplay.map((category) => {
+                // Get the appropriate title and description based on language
+                const title = isRTL ? category.name_ar || category.name_en : category.name_en;
+                const description = isRTL ? category.home_description_ar || category.home_description_en : category.home_description_en;
 
-              return (
-                <motion.div
-                  key={category.id}
-                  variants={cardVariants}
-                  whileHover={{
-                    y: -8,
-                    transition: { duration: 0.3, ease: "easeOut" }
-                  }}
-                >
-                  <ProductCard
-                    imageUrl={category.image_url ? getImageUrl(category.image_url) : null}
-                    title={title}
-                    description={description}
-                  />
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        )}
+                return (
+                  <motion.div
+                    key={category.id}
+                    variants={cardVariants}
+                    whileHover={{
+                      y: -8,
+                      transition: { duration: 0.3, ease: "easeOut" }
+                    }}
+                  >
+                    <ProductCard
+                      imageUrl={category.image_url ? getImageUrl(category.image_url) : null}
+                      title={title}
+                      description={description}
+                    />
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          )}
 
         {/* See All Products Button */}
         <motion.div

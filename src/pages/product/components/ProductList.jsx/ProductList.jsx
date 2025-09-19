@@ -267,57 +267,13 @@ function ProductList({ onProductClick, onRequestQuote, isRTL: propIsRTL }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <div className="w-full md:w-1/2 lg:w-1/3">
+        <div className="w-full">
           <SearchBar
             value={searchQuery}
             onChange={handleSearch}
             placeholder={t('common.searchPlaceholder', 'Search for a product...')}
             isRTL={isRTL}
           />
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="w-full sm:w-48">
-            <select
-              value={selectedCategory}
-              onChange={(e) => handleSearch(searchQuery, e.target.value)}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${isRTL ? 'text-right' : 'text-left'} ${isRTL ? 'font-cairo' : ''}`}
-              style={{ 
-                direction: isRTL ? 'rtl' : 'ltr',
-                fontFamily: isRTL ? 'Cairo, sans-serif' : 'inherit'
-              }}
-            >
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="w-full sm:w-48">
-            <select
-              value={sortBy}
-              onChange={(e) => handleSort(e.target.value)}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${isRTL ? 'text-right' : 'text-left'} ${isRTL ? 'font-cairo' : ''}`}
-              style={{ 
-                direction: isRTL ? 'rtl' : 'ltr',
-                fontFamily: isRTL ? 'Cairo, sans-serif' : 'inherit'
-              }}
-            >
-              <option value="">
-                {t('common.sortBy', 'Sort by')}
-              </option>
-              {[
-                t('common.newest', 'Newest'),
-                t('common.oldest', 'Oldest'),
-                t('common.aToZ', 'A to Z'),
-                t('common.zToA', 'Z to A')
-              ].map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
       </motion.div>
       <AnimatePresence>

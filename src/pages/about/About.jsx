@@ -6,9 +6,12 @@ import { Award, Briefcase, Truck, Users, Zap } from 'lucide-react'
 import MissionVisionSection from './components/MissionVisionSection'
 import { TrustedStandards } from './components/TrustedStandards'
 import { AboutTextSection, HeroSection } from '../../components/page-hero-text/PageHeroAndText'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 function About() {
   const { t } = useTranslation();
+    const { isRTL } = useLanguage();
+  
   
   // Animation variants
   const containerVariants = {
@@ -116,7 +119,7 @@ function About() {
                           iconSrc={'/icons/microscope-lcon.png'}
                           iconAlt={'microscope'}
                           title={t('about.features.premiumProducts')}
-                          showBorder={true}
+                          showBorder={isRTL ? false : true}
                       />
                     </motion.div>
                     
@@ -148,6 +151,7 @@ function About() {
                       <FeatureCard
                           iconSrc={'/icons/group.png'}
                           title={t('about.features.backedByExperience')}
+                          showBorder={isRTL ? true : false}
                       />
                     </motion.div>
                 </motion.div>

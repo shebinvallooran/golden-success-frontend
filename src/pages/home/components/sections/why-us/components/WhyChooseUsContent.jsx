@@ -181,7 +181,7 @@ const WhyUsSectionContent = () => {
 
       {/* Center phone image */}
       <motion.div
-        className="relative w-80 h-[35rem] lg:order-2 order-3 flex items-center justify-center"
+        className="relative hidden lg:flex w-80 h-[35rem] lg:order-2 order-3 flex items-center justify-center"
         variants={phoneVariants}
         initial="hidden"
         whileInView="visible"
