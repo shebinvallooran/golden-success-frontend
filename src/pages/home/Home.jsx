@@ -1,11 +1,11 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import HeroSection from './components/HeroSection'
-import WhatWeDo from './components/sections/what-we-do/WhatWeDo'
-import WhyUs from './components/sections/why-us/WhyUs'
-import OurProductsHome from './components/sections/our-products/OurProductsHome'
-import AboutUsSection from './components/sections/about-us/AboutUsSection'
-import ContactUsBanner from './components/ContactUsBanner'
+import React from "react";
+import { motion } from "framer-motion";
+import HeroSection from "./components/HeroSection";
+import WhatWeDo from "./components/sections/what-we-do/WhatWeDo";
+import WhyUs from "./components/sections/why-us/WhyUs";
+import OurProductsHome from "./components/sections/our-products/OurProductsHome";
+import AboutUsSection from "./components/sections/about-us/AboutUsSection";
+import ContactUsBanner from "./components/ContactUsBanner";
 
 function Home() {
   // Each section will animate individually when it comes into view
@@ -24,7 +24,7 @@ function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <WhatWeDo/>
+        <WhatWeDo />
       </motion.div>
 
       <motion.div
@@ -32,8 +32,9 @@ function Home() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        style={{ paddingTop: "2rem", paddingBottom: "1rem" }}
       >
-        <WhyUs/>
+        <WhyUs />
       </motion.div>
 
       <motion.div
@@ -41,6 +42,7 @@ function Home() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        style={{ paddingTop: "2rem", paddingBottom: "1rem" }}
       >
         <OurProductsHome />
       </motion.div>
@@ -50,6 +52,7 @@ function Home() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        style={{ paddingTop: "2rem", paddingBottom: "1rem" }}
       >
         <AboutUsSection />
       </motion.div>
@@ -63,7 +66,7 @@ function Home() {
         <ContactUsBanner />
       </motion.div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

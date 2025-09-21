@@ -1,9 +1,10 @@
 /* Import RTL support styles */
-@import './styles/rtl.css';
+@import "./styles/rtl.css";
 
 /* App specific styles */
 .App {
   min-height: 100vh;
+  background-color: white;
 }
 
 /* Smooth scrolling for the entire app */
