@@ -1,0 +1,11 @@
+.ltr ul,
+.ltr ol {
+  margin-left: 1.25rem; /* or your desired spacing */
+  margin-right: 0;
+}
+
+.rtl ul,
+.rtl ol {
+  margin-right: 1.25rem;
+  margin-left: 0;
+}
