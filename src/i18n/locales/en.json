@@ -224,10 +224,12 @@
     "form": {
       "title": "Get in Touch Now!",
       "subtitle": "Have a specific product or inquiry? Fill out the form below — we'll respond quickly.",
-      "successMessage": "Your inquiry has been sent!",
+      "successTitle": "Thank You!",
+      "successMessage": "Your inquiry has been sent successfully!",
       "errorMessage": "There was an error submitting your request. Please try again.",
       "submitButton": "Submit Inquiry",
       "submittingButton": "Sending...",
+      "returningToForm": "Returning to form in a few seconds...",
       "fields": {
         "fullName": {
           "label": "Full Name",
