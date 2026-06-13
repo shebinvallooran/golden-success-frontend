@@ -69,7 +69,7 @@ const SearchBar = ({
       <div className="relative" ref={categoryRef}>
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className={`flex items-center gap-2 px-4 py-3 bg-transparent hover:bg-gray-50 transition-colors duration-200 min-w-[130px] justify-between h-12 rounded-md ${
+          className={`flex items-center gap-2 px-4 py-2 bg-transparent hover:bg-gray-50 transition-colors duration-200 min-w-[130px] justify-between h-10 rounded-md ${
             isDropdownOpen ? "bg-gray-50" : ""
           } ${isRTL ? "flex-row-reverse" : ""}`}
         >
@@ -121,7 +121,7 @@ const SearchBar = ({
             onSearch(newQuery, selectedCategory);
           }}
           placeholder={placeholder}
-          className={`w-full py-3 bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm text-gray-700 placeholder-gray-500 h-12 rounded-[50px] ${
+          className={`w-full py-2 bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm text-gray-700 placeholder-gray-500 h-10 rounded-[50px] ${
             isRTL ? "pr-6 pl-12 text-right font-cairo" : "pl-6 pr-12 text-left"
           }`}
           dir={isRTL ? "rtl" : "ltr"}
@@ -138,7 +138,7 @@ const SearchBar = ({
       <div className="relative" ref={sortRef}>
         <button
           onClick={() => setIsSortOpen(!isSortOpen)}
-          className={`flex items-center gap-2 px-4 py-3 transition-colors duration-200 h-12 rounded-md
+          className={`flex items-center gap-2 px-4 py-2 transition-colors duration-200 h-10 rounded-md
           ${isSortOpen ? "bg-gray-50" : "bg-transparent"}
           ${isRTL ? "flex-row-reverse" : ""}`}
         >

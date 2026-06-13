@@ -221,6 +221,12 @@
     "form": {
       "title": "احصل على اتصال الآن!",
       "subtitle": "لديك منتج محدد أو طلب؟ املأ النموذج أدناه — سنرد بسرعة.",
+      "successTitle": "شكراً لك!",
+      "successMessage": "تم إرسال استفسارك بنجاح!",
+      "errorMessage": "حدث خطأ أثناء إرسال طلبك. يرجى المحاولة مرة أخرى.",
+      "submitButton": "إرسال الاستفسار",
+      "submittingButton": "جاري الإرسال...",
+      "returningToForm": "العودة للنموذج خلال ثوانٍ...",
       "fields": {
         "fullName": {
           "label": "الاسم الكامل",
@@ -238,13 +244,19 @@
           "label": "الشركة",
           "placeholder": "اسم الشركة"
         },
+        "productName": {
+          "label": "اسم المنتج",
+          "placeholder": "أدخل اسم المنتج"
+        },
+        "quantity": {
+          "label": "الكمية",
+          "placeholder": "أدخل الكمية"
+        },
         "message": {
           "label": "الرسالة",
           "placeholder": "رسالتك"
         }
-      },
-      "submitButton": "إرسال الاستفسار",
-      "successMessage": "تم إرسال الاستفسار!"
+      }
     }
   },
   "footer": {
