@@ -8,6 +8,9 @@ import {
 import ProductList from "./components/ProductList.jsx/ProductList";
 import { ProductDetail } from "./components/product-detail/ProductDetail";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { X } from "lucide-react";
+import ContactForm from "../contact/components/ContactForm";
+import { getImageUrl } from "../../api/axiosInstance";
 
 function Product() {
   const { t, i18n } = useTranslation();
@@ -15,11 +18,29 @@ function Product() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showDetail, setShowDetail] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [quoteProductName, setQuoteProductName] = useState('');
 
   useEffect(() => {
     setIsMounted(true);
     return () => setIsMounted(false);
   }, []);
+
+  useEffect(() => {
+    if (isQuoteModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isQuoteModalOpen]);
+
+  const closeQuoteModal = () => {
+    setIsQuoteModalOpen(false);
+    setQuoteProductName('');
+  };
 
   const productText = t(
     "products.description",
@@ -45,15 +66,8 @@ function Product() {
       ? product?.name_ar || product?.name_en || t("common.product", "Product")
       : product?.name_en || product?.name_ar || t("common.product", "Product");
 
-    const message = isRTL
-      ? `${t("products.quoteRequested", "تم طلب عرض سعر لـ")}: ${productName}`
-      : `${t(
-          "products.quoteRequested",
-          "Quote requested for"
-        )}: ${productName}`;
-
-    // You can implement your quote request logic here
-    alert(message);
+    setQuoteProductName(productName);
+    setIsQuoteModalOpen(true);
   };
 
   // Animation variants
@@ -160,6 +174,79 @@ function Product() {
           >
             <ProductList onProductClick={handleProductClick} />
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Quote Request Modal */}
+      <AnimatePresence>
+        {isQuoteModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fadeIn">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeQuoteModal}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm z-[100]"
+            />
+            {/* Modal Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", duration: 0.45 }}
+              className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl z-[101] overflow-hidden max-h-[90vh] flex flex-col"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50/50">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {t('navigation.requestQuote', 'Request a Quote')}
+                </h3>
+                <button
+                  onClick={closeQuoteModal}
+                  className="p-1.5 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              
+              {/* Body: Split Layout */}
+              <div className={`flex-1 overflow-y-auto flex flex-col ${isRTL ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                {/* Left Side: Product Details & Image */}
+                <div className="w-full md:w-5/12 bg-[#F7F9F2] p-6 flex flex-col justify-center items-center border-r border-gray-100">
+                  <div className="w-full max-w-[240px] aspect-square flex justify-center items-center p-4 bg-[#E9E9E9] rounded-2xl shadow-sm mb-4">
+                    <img
+                      src={
+                        getImageUrl(selectedProduct?.image_url || selectedProduct?.image) ||
+                        "/api/placeholder/300/300"
+                      }
+                      alt={quoteProductName}
+                      className="max-w-full max-h-full object-contain rounded-xl"
+                      onError={(e) => {
+                        e.target.src = "/api/placeholder/300/300";
+                      }}
+                    />
+                  </div>
+                  <h4 className="text-center font-bold text-gray-900 text-base md:text-lg max-w-[260px] break-words">
+                    {quoteProductName}
+                  </h4>
+                  {selectedProduct?.category_en && (
+                    <span className="mt-1.5 px-3 py-1 bg-[#20B2AA]/10 text-[#20B2AA] text-xs font-semibold rounded-full uppercase tracking-wider">
+                      {isRTL ? selectedProduct?.category_ar : selectedProduct?.category_en}
+                    </span>
+                  )}
+                </div>
+
+                {/* Right Side: Form */}
+                <div className="w-full md:w-7/12 p-6">
+                  <ContactForm 
+                    initialProductName={quoteProductName} 
+                    onSuccess={closeQuoteModal}
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </motion.div>
